@@ -16,6 +16,7 @@ let locationMarker;
 const today = new Date();
 const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().split("T")[0];
 dateInput.min = localToday;
+dateInput.value = localToday;
 
 function updateSummary(input) {
   const price = input.dataset.price;
@@ -119,7 +120,7 @@ function registerBookingTool() {
       inputSchema: {
         type: "object",
         properties: {
-          name: { type: "string" }, phone: { type: "string" }, carType: { enum: ["سيدان", "دفع رباعي", "وانيت", "سيارة صغيرة"] },
+          name: { type: "string" }, phone: { type: "string" }, carType: { enum: ["صغير", "وسط", "كبير", "كبير جدًا"] },
           package: { enum: ["غسيل خارجي", "غسيل متكامل", "عناية فاخرة"] }, date: { type: "string", format: "date" },
           time: { enum: ["9:00 صباحًا", "11:00 صباحًا", "1:00 ظهرًا", "3:00 عصرًا", "5:00 مساءً", "7:00 مساءً"] }, location: { type: "string" }
         },
