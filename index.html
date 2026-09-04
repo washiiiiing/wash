@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071528" />
+    <meta name="description" content="احجز غسيل سيارتك المتنقل في موقعك وموعدك المناسب." />
+    <title>اسم المغسلة | غسيل سيارات متنقل</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="اسم المغسلة - الرئيسية">
+        <span class="brand-mark" aria-hidden="true">ا</span>
+        <span><strong>اسم المغسلة</strong><small>غسيل متنقل</small></span>
+      </a>
+      <a class="header-link" href="#booking">احجز الآن <span aria-hidden="true">←</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <img class="hero-image" src="assets/mobile-car-wash-hero.png" alt="فني يغسل سيارة أمام منزل العميل" />
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> نجيك وين ما كنت</p>
+          <h1>سيارتك تلمع.<br /><em>وأنت مرتاح.</em></h1>
+          <p>اختر الباقة والموعد، وأرسل لنا موقعك. فريقنا يوصلك بكامل التجهيزات.</p>
+          <div class="trust-row" aria-label="مميزات الخدمة">
+            <span>✓ حجز سريع</span><span>✓ دفع بعد الخدمة</span><span>✓ نصل لموقعك</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking-wrap" id="booking">
+        <div class="section-intro">
+          <span class="step-label">01 — اختر خدمتك</span>
+          <h2>وش تحتاج سيارتك اليوم؟</h2>
+        </div>
+
+        <form id="bookingForm" novalidate>
+          <fieldset class="packages-grid">
+            <legend class="sr-only">اختر باقة الغسيل</legend>
+            <label class="package-card">
+              <input type="radio" name="package" value="غسيل خارجي" data-price="45" required />
+              <span class="package-check">✓</span>
+              <span class="package-icon" aria-hidden="true">◒</span>
+              <strong>غسيل خارجي</strong>
+              <small>غسيل الهيكل، الجنوط، وتلميع الإطارات</small>
+              <b>45 <i>ر.س</i></b>
+            </label>
+            <label class="package-card featured">
+              <span class="popular">الأكثر طلبًا</span>
+              <input type="radio" name="package" value="غسيل متكامل" data-price="75" required checked />
+              <span class="package-check">✓</span>
+              <span class="package-icon" aria-hidden="true">✦</span>
+              <strong>غسيل متكامل</strong>
+              <small>غسيل خارجي، تنظيف داخلي، تعطير وتلميع</small>
+              <b>75 <i>ر.س</i></b>
+            </label>
+            <label class="package-card">
+              <input type="radio" name="package" value="عناية فاخرة" data-price="120" required />
+              <span class="package-check">✓</span>
+              <span class="package-icon" aria-hidden="true">◆</span>
+              <strong>عناية فاخرة</strong>
+              <small>تنظيف عميق، شمع حماية، وتلميع شامل</small>
+              <b>120 <i>ر.س</i></b>
+            </label>
+          </fieldset>
+
+          <div class="details-grid">
+            <div class="form-panel">
+              <span class="step-label">02 — بيانات الحجز</span>
+              <div class="fields-grid">
+                <label>الاسم
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="اكتب اسمك" required />
+                </label>
+                <label>رقم الجوال
+                  <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="05xxxxxxxx" required />
+                </label>
+                <label>نوع السيارة
+                  <select id="carType" name="carType" required>
+                    <option value="">اختر نوع السيارة</option>
+                    <option>سيدان</option><option>دفع رباعي</option><option>وانيت</option><option>سيارة صغيرة</option>
+                  </select>
+                </label>
+                <label>التاريخ
+                  <input id="date" name="date" type="date" required />
+                </label>
+                <label>الوقت
+                  <select id="time" name="time" required>
+                    <option value="">اختر الوقت</option>
+                    <option>9:00 صباحًا</option><option>11:00 صباحًا</option><option>1:00 ظهرًا</option><option>3:00 عصرًا</option><option>5:00 مساءً</option><option>7:00 مساءً</option>
+                  </select>
+                </label>
+                <label class="wide">الحي أو وصف الموقع
+                  <input id="location" name="location" type="text" placeholder="مثال: حي الياسمين، الرياض" required />
+                </label>
+              </div>
+              <div class="map-heading">
+                <div><strong>حدد موقع السيارة على الخريطة</strong><small>اضغط على المكان المطلوب لوضع العلامة</small></div>
+                <button class="location-btn" type="button" id="getLocation"><span aria-hidden="true">⌖</span> موقعي الحالي</button>
+              </div>
+              <div id="bookingMap" class="booking-map" role="region" aria-label="خريطة تحديد موقع خدمة الغسيل"></div>
+              <p class="location-status" id="locationStatus" role="status"></p>
+            </div>
+
+            <aside class="summary-card">
+              <span class="step-label">03 — تأكيد الطلب</span>
+              <h3>ملخص الحجز</h3>
+              <div class="summary-line"><span id="summaryPackage">غسيل متكامل</span><strong id="summaryPrice">75 ر.س</strong></div>
+              <div class="summary-line muted"><span>رسوم الوصول</span><strong>مجانًا</strong></div>
+              <div class="summary-total"><span>الإجمالي</span><strong id="totalPrice">75 <small>ر.س</small></strong></div>
+              <button class="submit-btn" type="submit">تأكيد الحجز عبر واتساب <span aria-hidden="true">←</span></button>
+              <p>سيتم فتح واتساب برسالة تحتوي على كل تفاصيل حجزك.</p>
+            </aside>
+          </div>
+        </form>
+      </section>
+
+      <section class="how-it-works">
+        <p class="eyebrow dark"><span></span> الموضوع بسيط</p>
+        <h2>ثلاث خطوات، وسيارتك تلمع</h2>
+        <div class="steps">
+          <article><b>١</b><div><h3>احجز</h3><p>اختر الباقة والموعد المناسب لك.</p></div></article>
+          <article><b>٢</b><div><h3>أرسل موقعك</h3><p>شاركنا موقعك بدقة عبر النموذج.</p></div></article>
+          <article><b>٣</b><div><h3>نجيك</h3><p>نوصل بكامل معداتنا ونرجع لك اللمعة.</p></div></article>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>اسم المغسلة — غسيل سيارات متنقل</span><span>خدمة أسرع، سيارة أنظف.</span></footer>
+    <div class="toast" id="toast" role="alert"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="script.js"></script>
+  </body>
+</html>
