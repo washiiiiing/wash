@@ -25,3 +25,21 @@
 }
 
 @media(max-width:420px){.hero{min-height:700px}.hero-image{height:315px}.hero-copy{bottom:36px}.trust-row{grid-template-columns:1fr 1fr}.trust-row span:last-child{grid-column:1/-1}}
+
+/* الباقات الثلاث في صف واحد على الجوال مثل نسخة اللابتوب */
+@media(max-width:800px){
+  .packages-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .package-card{min-width:0;min-height:180px;padding:15px 9px 12px;border-radius:13px;box-shadow:0 5px 16px rgba(13,33,56,.07)}
+  .package-card:hover{transform:none}
+  .package-check{left:7px;top:8px;width:18px;height:18px;font-size:10px}
+  .package-icon{height:29px;font-size:20px;margin-top:3px}
+  .package-card strong{font-size:clamp(12px,3.5vw,15px);line-height:1.25;margin:7px 0 5px;white-space:nowrap}
+  .package-card small{font-size:10px;line-height:1.45;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+  .package-card b{font-size:22px;line-height:1;margin-top:10px}.package-card b i{font-size:10px}
+  .popular{right:8px;left:auto;padding:4px 6px;font-size:9px;white-space:nowrap}
+}
+
+@media(max-width:380px){
+  .booking-wrap{padding-right:10px;padding-left:10px}.packages-grid{gap:5px}
+  .package-card{padding-right:7px;padding-left:7px}.package-card strong{font-size:12px}.package-card small{font-size:9px}
+}
