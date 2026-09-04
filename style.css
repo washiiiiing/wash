@@ -4,3 +4,24 @@
 @media(max-width:800px){.site-header{height:70px}.hero{min-height:520px;align-items:flex-end}.hero-image{object-position:37% center}.hero-shade{background:linear-gradient(0deg,rgba(5,18,33,.98) 4%,rgba(5,18,33,.62) 60%,rgba(5,18,33,.18))}.hero-copy{margin:0 22px 52px}.hero h1{font-size:48px}.hero-copy>p:not(.eyebrow){font-size:16px}.trust-row{gap:12px 18px;margin-top:25px}.booking-wrap{padding:62px 16px}.packages-grid{grid-template-columns:1fr}.package-card{min-height:210px}.details-grid{grid-template-columns:1fr}.fields-grid{grid-template-columns:1fr}.fields-grid .wide{grid-column:auto}.form-panel,.summary-card{padding:25px 20px}.steps{grid-template-columns:1fr;max-width:480px;margin:42px auto 0}.how-it-works{padding-top:65px;padding-bottom:65px}footer{flex-direction:column;justify-content:center;text-align:center}.header-link{font-size:14px}}
 @media(max-width:420px){.brand small{display:none}.hero h1{font-size:42px}.trust-row span{font-size:12px}.section-intro h2{font-size:30px}.map-heading{align-items:flex-start;flex-direction:column}.map-heading .location-btn{width:100%}.booking-map{height:260px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+/* يحافظ على ترتيب نسخة اللابتوب مع تكييف المقاسات للجوال */
+@media(max-width:800px){
+  .site-header{height:76px;padding:0 20px}.brand strong{font-size:18px}.header-link{font-size:14px}
+  .hero{min-height:680px;display:block;background:var(--navy)}
+  .hero-image{inset:0 0 auto;height:340px;object-fit:cover;object-position:42% center}
+  .hero-shade{background:linear-gradient(180deg,rgba(5,18,33,.02) 0,rgba(5,18,33,.12) 38%,var(--navy) 51%,var(--navy) 100%)}
+  .hero-copy{position:absolute;right:22px;left:22px;bottom:42px;width:auto;margin:0}
+  .hero h1{font-size:clamp(42px,13vw,58px);line-height:1.03;margin:17px 0 18px}
+  .hero-copy>p:not(.eyebrow){font-size:16px;line-height:1.7;margin:0}
+  .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px;text-align:center}
+  .trust-row span{font-size:12px;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:8px 4px}
+  .booking-wrap{padding:58px 16px}.section-intro{text-align:right;margin-bottom:30px}
+  .packages-grid{grid-template-columns:1fr;gap:14px}.package-card{min-height:208px;padding:24px}
+  .details-grid{grid-template-columns:1fr;gap:16px;margin-top:16px}.form-panel,.summary-card{padding:25px 20px}
+  .fields-grid{grid-template-columns:1fr;gap:16px}.fields-grid .wide{grid-column:auto}
+  .summary-card{order:2}.how-it-works{text-align:right}.eyebrow.dark{justify-content:flex-start}
+  .steps{grid-template-columns:1fr}.how-it-works h2{font-size:34px}
+}
+
+@media(max-width:420px){.hero{min-height:700px}.hero-image{height:315px}.hero-copy{bottom:36px}.trust-row{grid-template-columns:1fr 1fr}.trust-row span:last-child{grid-column:1/-1}}
